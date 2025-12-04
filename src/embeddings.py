@@ -1,4 +1,3 @@
-# Убираем: from langchain.schema import Document (не используется)
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModel

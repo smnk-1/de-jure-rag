@@ -22,7 +22,6 @@ class VectorDatabase:
 
     @staticmethod
     def _create_vector_db_from_articles(vdb_path: str, embedding_function):
-        """Создание новой векторной базы из статей Конституции РФ"""
         articles = VectorDatabase._load_articles_static()
         documents = []
         for article in articles:
@@ -43,7 +42,6 @@ class VectorDatabase:
 
     @staticmethod
     def _load_articles_static() -> List[Dict[str, Any]]:
-        """Статический метод для загрузки статей (для использования в _create_vector_db_from_articles)"""
         with open(settings.json_path, 'r', encoding='utf-8') as f:
             articles = json.load(f)
         return [art for art in articles if art["section"] != "РАЗДЕЛ ВТОРОЙ"]
